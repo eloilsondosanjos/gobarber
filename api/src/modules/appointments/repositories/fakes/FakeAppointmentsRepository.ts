@@ -1,7 +1,8 @@
+import { isEqual } from 'date-fns';
 import { uuid } from 'uuidv4';
 
-import IAppointmentsRepositiry from '@modules/appointements/repositories/IAppointmentsRepository';
-import ICreateAppointmentDTO from '@modules/appointements/dtos/ICreateAppointmentDTO';
+import IAppointmentsRepositiry from '@modules/appointments/repositories/IAppointmentsRepository';
+import ICreateAppointmentDTO from '@modules/appointments/dtos/ICreateAppointmentDTO';
 
 import Appointment from '../../infra/typeorm/entities/Appointment';
 
@@ -10,7 +11,7 @@ class AppointmentsRepository implements IAppointmentsRepositiry {
 
   public async findByDate(date: Date): Promise<Appointment | undefined> {
     const findAppointment = this.appointments.find(
-      appointment => appointment.date === date,
+      appointment => isEqual(appointment.date, date),
     );
 
     return findAppointment;
