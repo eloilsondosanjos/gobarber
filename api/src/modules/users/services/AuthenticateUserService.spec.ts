@@ -12,23 +12,23 @@ describe('AuthenticateUser', () => {
 
     const createUser = new CreateUserService(
       fakeUsersRepository,
-      fakeHashProvider
+      fakeHashProvider,
     );
 
     const authenticateUser = new AuthenticateUserService(
       fakeUsersRepository,
-      fakeHashProvider
+      fakeHashProvider,
     );
 
     const user = await createUser.execute({
       name: 'John Doe',
       email: 'johndoe@teste.com',
-      password: '123456'
-    })
+      password: '123456',
+    });
 
     const response = await authenticateUser.execute({
       email: 'johndoe@teste.com',
-      password: '123456'
+      password: '123456',
     });
 
     expect(response).toHaveProperty('token');
@@ -41,13 +41,15 @@ describe('AuthenticateUser', () => {
 
     const authenticateUser = new AuthenticateUserService(
       fakeUsersRepository,
-      fakeHashProvider
+      fakeHashProvider,
     );
 
-    expect(authenticateUser.execute({
-      email: 'johndoe@teste.com',
-      password: '123456'
-    })).rejects.toBeInstanceOf(AppError);
+    await expect(
+      authenticateUser.execute({
+        email: 'johndoe@teste.com',
+        password: '123456',
+      }),
+    ).rejects.toBeInstanceOf(AppError);
   });
 
   it('should be able to authenticate with wrong password', async () => {
@@ -56,24 +58,25 @@ describe('AuthenticateUser', () => {
 
     const createUser = new CreateUserService(
       fakeUsersRepository,
-      fakeHashProvider
+      fakeHashProvider,
     );
 
     const authenticateUser = new AuthenticateUserService(
       fakeUsersRepository,
-      fakeHashProvider
+      fakeHashProvider,
     );
 
     await createUser.execute({
       name: 'John Doe',
       email: 'johndoe@teste.com',
-      password: '123456'
-    })
+      password: '123456',
+    });
 
-      expect(authenticateUser.execute({
-      email: 'johndoe@teste.com',
-      password: 'wrong-password'
-    })).rejects.toBeInstanceOf(AppError);
+    await expect(
+      authenticateUser.execute({
+        email: 'johndoe@teste.com',
+        password: 'wrong-password',
+      }),
+    ).rejects.toBeInstanceOf(AppError);
   });
-})
-
+});

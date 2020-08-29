@@ -7,7 +7,7 @@ describe('CreateAppointment', () => {
   it('should be able to create a new appointment', async () => {
     const fakeAppointmentsRepository = new FakeAppointmentsRepository();
     const createAppointment = new CreateAppointmentService(
-      fakeAppointmentsRepository
+      fakeAppointmentsRepository,
     );
 
     const appointment = await createAppointment.execute({
@@ -22,7 +22,7 @@ describe('CreateAppointment', () => {
   it('should not be able to create two appointment on the same time', async () => {
     const fakeAppointmentsRepository = new FakeAppointmentsRepository();
     const createAppointment = new CreateAppointmentService(
-      fakeAppointmentsRepository
+      fakeAppointmentsRepository,
     );
 
     const appointmentDate = new Date();
@@ -32,10 +32,11 @@ describe('CreateAppointment', () => {
       provider_id: '123123',
     });
 
-    expect(createAppointment.execute({
-      date: appointmentDate,
-      provider_id: '123123',
-    })).rejects.toBeInstanceOf(AppError);
+    await expect(
+      createAppointment.execute({
+        date: appointmentDate,
+        provider_id: '123123',
+      }),
+    ).rejects.toBeInstanceOf(AppError);
   });
-})
-
+});
