@@ -11,10 +11,10 @@ import UsersRepository from '@modules/users/infra/typeorm/repositories/UsersRepo
 
 container.registerSingleton<IAppointementsRepository>(
   'AppointementsRepository',
-  AppointementsRepository
+  AppointementsRepository,
 );
 
 container.registerSingleton<IUsersRepository>(
   'UsersRepository',
-  UsersRepository
+  UsersRepository,
 );
