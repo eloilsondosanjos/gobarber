@@ -3,10 +3,11 @@ import multer from 'multer';
 import { container } from 'tsyringe';
 
 import uploadConfig from '@config/upload';
-import UpdateUserAvatarService from '@modules/users/services/UpdateUserAvatarService';
-import UsersController from '../controllers/UsersController';
 import ensureAuthenticated from '@modules/users/infra/http/middlewares/ensureAuthenticated';
+import UpdateUserAvatarService from '@modules/users/services/UpdateUserAvatarService';
+
 import UserAvatarController from '../controllers/UserAvatarController';
+import UsersController from '../controllers/UsersController';
 
 const usersRouter = Router();
 const upload = multer(uploadConfig);
@@ -18,6 +19,8 @@ usersRouter.post('/', usersController.create);
 usersRouter.patch(
   '/avatar',
   ensureAuthenticated,
-  upload.single('avatar'), userAvatarController.update);
+  upload.single('avatar'),
+  userAvatarController.update,
+);
 
 export default usersRouter;
