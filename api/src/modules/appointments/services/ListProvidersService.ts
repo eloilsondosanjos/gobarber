@@ -9,7 +9,7 @@ interface IRequest {
 }
 
 @injectable()
-class ListProviderService {
+class ListProvidersService {
   constructor(
     @inject('UsersRepository')
     private usersRepository: IUsersRepository,
@@ -20,12 +20,8 @@ class ListProviderService {
       except_user_id: user_id,
     });
 
-    if (!users) {
-      throw new AppError('User not found');
-    }
-
     return users;
   }
 }
 
-export default ListProviderService;
+export default ListProvidersService;

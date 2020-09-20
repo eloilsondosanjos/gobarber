@@ -20,7 +20,7 @@ type IResponse = Array<{
 class ListProviderMonthAvailabilityService {
   constructor(
     @inject('AppointmentsRepository')
-    private appointentsRepository: IAppointmentsRepositiry,
+    private appointmentsRepository: IAppointmentsRepositiry,
   ) {}
 
   public async execute({
@@ -28,7 +28,7 @@ class ListProviderMonthAvailabilityService {
     month,
     year,
   }: IRequest): Promise<IResponse> {
-    const appointments = await this.appointentsRepository.findAllInMonthFromprovider(
+    const appointments = await this.appointmentsRepository.findAllInMonthFromProvider(
       {
         provider_id,
         month,
