@@ -2,6 +2,7 @@
 .vscode/
 build/
 temp/
+ormconfig.json
 
 tmp/*
 !tmp/.gitkeep
