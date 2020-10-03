@@ -30,6 +30,7 @@
     ],
     "rules": {
       "prettier/prettier": "error",
+      "camelcase":"off",
       "no-unused-expressions":"off",
       "react/jsx-props-no-spreading": "off",
       "react/prop-types": "off",
