@@ -38,6 +38,8 @@
       "react-hooks/exhaustive-deps": "warn",
       "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
       "import/prefer-default-export": "off",
+      "no-duplicate-imports":"off",
+      "import/no-duplicates":"off",
       "import/extensions": [
         "error",
         "ignorePackages",
