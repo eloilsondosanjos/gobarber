@@ -117,6 +117,8 @@ const SignIn: React.FC = () => {
 
               <Input
                 ref={passwordInputRef}
+                autoCorrect={false}
+                autoCapitalize="none"
                 name="password"
                 icon="lock"
                 placeholder="Senha"
