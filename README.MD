@@ -43,7 +43,7 @@
 
 ## 🚀 Tecnologias
 
-### Front-end WEB:
+### Front-end Web:
 
 - [ReactJS](https://pt-br.reactjs.org)
 - [Axios](https://github.com/axios/axios)
