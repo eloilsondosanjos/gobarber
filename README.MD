@@ -25,7 +25,7 @@
 ## 🎯 Indice
 
   - [Tecnologias](#-tecnologias)
-  - [Como Executar o Projeto](#-como-executar-o-projeto)
+  - [Como Executar o Projeto](#-Como-Baixar-e-Executar-os-Projetos-WEB-|-Mobile-|-API)
   - [Layout](#-layout)
   - [Licença](#-licença)
 
