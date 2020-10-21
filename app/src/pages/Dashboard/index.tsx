@@ -10,7 +10,7 @@ import {
   Header,
   HeaderTitle,
   UserName,
-  ProfileButton,
+  ProfileInfo,
   UserAvatar,
   LogoutButton,
   ProvidersList,
@@ -62,13 +62,13 @@ const Dashboard: React.FC = () => {
         <LogoutButton onPress={handleLogOut}>
           <Icon name="log-out" size={24} color="#999591" />
         </LogoutButton>
-        <HeaderTitle>
-          Bem vindo, {'\n'}
-          <UserName>{user.name}</UserName>
-        </HeaderTitle>
-        <ProfileButton onPress={navigateToProfile}>
+        <ProfileInfo onPress={navigateToProfile}>
+          <HeaderTitle>
+            Bem vindo, {'\n'}
+            <UserName>{user.name}</UserName>
+          </HeaderTitle>
           <UserAvatar source={{ uri: user.avatar_url }} />
-        </ProfileButton>
+        </ProfileInfo>
       </Header>
       <ProvidersList
         data={providers}

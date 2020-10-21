@@ -47,7 +47,7 @@ describe('ResetPasswordService', () => {
   });
 
   it('should not be able to reset the password with non-existing token', async () => {
-    expect(
+    await expect(
       resetPassword.execute({
         token: 'non-existing-token',
         password: '123456',
@@ -60,7 +60,7 @@ describe('ResetPasswordService', () => {
       'non-existing-user',
     );
 
-    expect(
+    await expect(
       resetPassword.execute({
         token,
         password: '123456',
@@ -80,7 +80,7 @@ describe('ResetPasswordService', () => {
     jest.spyOn(Date, 'now').mockImplementationOnce(() => {
       const customDate = new Date();
 
-      return customDate.setHours(customDate.getHours() + 2.5);
+      return customDate.setHours(customDate.getHours() + 3);
     });
 
     await expect(

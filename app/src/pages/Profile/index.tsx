@@ -28,6 +28,8 @@ import {
   BackButton,
   Title,
   UserAvatarButton,
+  ContentButtonAvatar,
+  IconCameraAvatar,
   UserAvatar,
 } from './styles';
 
@@ -122,8 +124,10 @@ const Profile: React.FC = () => {
       {
         title: 'Selecione um avatar',
         cancelButtonTitle: 'Cancelar',
-        chooseFromLibraryButtonTitle: 'Abrir galeria',
+        chooseFromLibraryButtonTitle: 'Escolher da galeria',
         takePhotoButtonTitle: 'Usar câmera',
+        maxWidth: 300,
+        maxHeight: 300,
       },
       response => {
         if (response.didCancel) {
@@ -167,7 +171,12 @@ const Profile: React.FC = () => {
           </BackButton>
           <Content>
             <UserAvatarButton onPress={handleUpdateAvatar}>
-              <UserAvatar source={{ uri: user.avatar_url }} />
+              <ContentButtonAvatar>
+                <IconCameraAvatar>
+                  <Icon name="camera" size={24} color="#312E38" />
+                </IconCameraAvatar>
+                <UserAvatar source={{ uri: user.avatar_url }} />
+              </ContentButtonAvatar>
             </UserAvatarButton>
 
             <View>

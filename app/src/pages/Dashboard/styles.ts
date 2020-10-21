@@ -28,14 +28,20 @@ export const HeaderTitle = styled.Text`
 export const UserName = styled.Text`
   color: #ff9000;
   font-family: 'RobotoSlab-Medium';
+  font-size: 20px;
 `;
 
-export const ProfileButton = styled.TouchableOpacity``;
+export const ProfileInfo = styled.TouchableOpacity`
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
 
 export const UserAvatar = styled.Image`
   width: 56px;
   height: 56px;
   border-radius: 28px;
+  margin-left: 16px;
 `;
 
 export const LogoutButton = styled(RectButton)``;
@@ -68,7 +74,7 @@ export const ProviderAvatar = styled.Image`
 
 export const ProviderInfo = styled.View`
   flex: 1;
-  margin-left: 20px;
+  margin-left: 16px;
 `;
 
 export const ProviderName = styled.Text`

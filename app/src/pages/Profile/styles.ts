@@ -23,6 +23,21 @@ export const BackButton = styled.TouchableOpacity`
 
 export const UserAvatarButton = styled.TouchableOpacity``;
 
+export const ContentButtonAvatar = styled.View``;
+
+export const IconCameraAvatar = styled.View`
+  z-index: 1;
+  position: absolute;
+  background: #ff9000;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  top: 135px;
+  left: 200px;
+  align-items: center;
+  justify-content: center;
+`;
+
 export const UserAvatar = styled.Image`
   width: 186px;
   height: 186px;
