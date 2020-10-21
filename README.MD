@@ -145,7 +145,6 @@
   $ yarn ios
 
 ```
-<br>
 
 ## 🚦 Importante:
 
