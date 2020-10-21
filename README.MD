@@ -25,13 +25,11 @@
 ## 🎯 Indice
 
   - [Tecnologias](#-tecnologias)
-  - [Como Executar o Projeto](#-Como-Baixar-e-Executar-os-Projetos-WEB-|-Mobile-|-API)
+  - [Como Baixar e Executar os Projetos](#-como-baixar-e-executar-os-projetos)
   - [Layout](#-layout)
   - [Licença](#-licença)
 
 </div>
-
-<br>
 
 <br>
 
@@ -90,9 +88,10 @@
 - [Cors](https://www.npmjs.com/package/cors)
 - [Dotenv](https://www.npmjs.com/package/dotenv)
 - [Jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
+ 
+ <br>
 
-
-## 📦 Como Baixar e Executar os Projetos WEB | Mobile | API
+## 📦 Como Baixar e Executar os Projetos
 <br>
 
 ```bash
