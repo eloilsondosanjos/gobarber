@@ -63,15 +63,16 @@ const ResetPassword: React.FC = () => {
       } catch (err) {
         if (err instanceof Yup.ValidationError) {
           const errors = getValidationErrors(err);
-          formRef.current?.setErrors(errors);
 
+          formRef.current?.setErrors(errors);
           return;
         }
 
         addToast({
           type: 'error',
           title: 'Erro ao resetar senha',
-          description: 'Ocorreu um erro ao resetar sua senha, tente novamente.',
+          description:
+            'Ocorreu um error ao resetar sua senha, tente novamente.',
         });
       }
     },
@@ -101,7 +102,7 @@ const ResetPassword: React.FC = () => {
               placeholder="Confirmação da senha"
             />
 
-            <Button type="submit">Resetar senha</Button>
+            <Button type="submit">Alterar senha</Button>
           </Form>
         </AnimationContainer>
       </Content>
