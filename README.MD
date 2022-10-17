@@ -98,7 +98,7 @@
 
   # Para clonar o repositório para seu computador
 
-  $ git clone https://github.com/eloilsondosanjos/GoBarber.git
+  $ git clone https://github.com/eloilsondosanjos/gobarber.git
 
 ```
 <br>
